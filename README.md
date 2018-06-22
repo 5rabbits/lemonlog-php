@@ -1,4 +1,4 @@
-## PHP Client
+## Lemonlog PHP Client
 
 ### Install
 `composer require lemonlog`
