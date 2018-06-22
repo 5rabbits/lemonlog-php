@@ -1,0 +1,16 @@
+{
+    "name": "lemontech/lemonlog-client",
+    "description": "Lemonlog client",
+    "require": {
+        "kreait/firebase-php": "^4.0"
+    },    
+    "authors": [
+        {
+            "name": "Vladzur",
+            "email": "vzurita@lemontech.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Lemontech\\Lemonlog\\Client\\": "src/"}
+    }
+}
