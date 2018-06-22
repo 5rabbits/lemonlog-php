@@ -13,10 +13,12 @@ class Client
     protected $application;
     public function __construct($options)
     {
-        $account = empty($options['account']) ? __DIR__.'/google-service-account.json' : $options['account'];
-        $this->application = empty($options['application']) ? 'TTB' : $options['application'];
-        $this->tenant = empty($options['tenant']) ? 'Lemontech' : $options['tenant'];
-        $this->serviceAccount = ServiceAccount::fromJsonFile($account);
+        if (empty($options['account'])) {
+            throw new Exception('Must set the location of json account file');
+        }
+        $this->application = empty($options['application']) ? 'MyApplication' : $options['application'];
+        $this->tenant = empty($options['tenant']) ? 'MyClient' : $options['tenant'];
+        $this->serviceAccount = ServiceAccount::fromJsonFile($options['acccount']);
         $firebase = (new Factory)
         ->withServiceAccount($this->serviceAccount)    
         ->create();
